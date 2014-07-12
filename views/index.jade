@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	h1= title
+
+	br
+
+	div.addCommentForm
+		form( method="post", action="/create")
+			div
+			div
+					span.label Name :
+					input(type="text", class="nameTxt", name="name")
+				div
+					span.label Surname :
+					input(type="text", class="nameTxt", name="surname")
+				div#addCommentSubmit
+					input(type="submit", value="Save")
+
+	br
+
+	#todos
+		- each item in todos
+			div.item
+			div.name #{item.surname}
+			br
+			div.content= item.name 
+			hr
